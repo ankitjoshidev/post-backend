@@ -3,17 +3,30 @@ const Sequelize = require('sequelize');
 const sequelize = require('../config/database');
 
 const User = sequelize.define('user', {
-  user_pass: {
+  password: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  user_nicename: Sequelize.STRING,
-  user_email: Sequelize.STRING,
-  user_url: Sequelize.STRING,
-  user_registered: Sequelize.BOOLEAN,
-  user_activation_key: Sequelize.STRING,
-  user_status: Sequelize.BOOLEAN,
-  display_name: Sequelize.STRING,
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  registered:{
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  active: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
 });
 
 module.exports = User;
