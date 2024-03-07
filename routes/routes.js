@@ -5,5 +5,6 @@ module.exports = (app) => {
     app.put('/users/:id', userController.updateUser);
     app.delete('/users/:id', userController.deleteUser);
     app.get('/users', userController.getAllUsers);
+    app.post('/signin', userController.signIn);
     // user routes end
   };
